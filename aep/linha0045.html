@@ -3,78 +3,100 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>BusTrack</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   </head>
 
   <body>
+    <!-- Navegação -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Nome</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>   
-          </button>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">BusTrack</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="navbar-nav">
+            <a class="nav-link active" href="index.html">Home</a>
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
 
-    <div class="m-5">
-      <table class="table table-striped table-bordered mt-5">
-      <thead>
-        <tr>
-          <th scope="col">Horario de Saida</th>
-          <td>07:50</td>
-          <th></th>
-        </tr>
-      </thead>
+    <main class="container my-5">
+      <!-- Tabela de Horários -->
+      <section>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered">
+            <thead class="table-light">
+              <tr>
+                <th>Próximos Pontos</th>
+                <th>Endereço</th>
+                <th>Horário de Passagem</th>
+              </tr>
+            </thead>
 
-      <tbody>
-        <tr>
-          <th scope="row">Proximos Pontos</th>
-          <td>er</td>
-          <td>07:50</td>
-        
-        </tr>
-
-        <tr>
-          <th scope="row">2</th>
-          <td>0067</td>
-          <td>08:00</td>
-
-        </tr>
-
-        <tr>
-          <th scope="row">3</th>
-          <td>0034</td>
-          <td>09:00</td>
-  
-        </tr>
-      </tbody>
-      </table>
-    </div>
-
-    <div class="m-5">
-      <h4>Localização do Onibus em tempo real</h4>
-      <div id="map" style="height: 400px;"></div>
-    </div>
-
-    <div class="m-5">
-      <section id="avaliacao">
-        <h4>Avalie seu ponto de ônibus</h4>
-        <div class="form-floating">
-          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-          <label for="floatingTextarea2">Descreva problemas ou melhorias...</label>
+            <tbody>
+              <tr>
+                <td>Ponto 1 - Praça da Sé</td>
+                <td>Praça da Sé, Centro</td>
+                <td>07:30</td>
+              </tr>
+              <tr>
+                <td>Ponto 2 - Metrô República</td>
+                <td>Praça da República, Centro</td>
+                <td>07:45</td>
+              </tr>
+              <tr>
+                <td>Ponto 3 - Metrô Consolação</td>
+                <td>Av. Paulista, 900, Consolação</td>
+                <td>08:10</td>
+              </tr>
+              <tr>
+                <td>Ponto 4 - Parque Ibirapuera (portão 3)</td>
+                <td>Av. Pedro Álvares Cabral, Vila Mariana</td>
+                <td>08:25</td>
+              </tr>
+              <tr>
+                <td>Ponto 5 - Shopping Eldorado</td>
+                <td>Av. Rebouças, 3970, Pinheiros</td>
+                <td>08:40</td>
+              </tr>
+              <tr>
+                <td>Ponto 6 - USP - Portão 1</td>
+                <td>Av. Prof. Almeida Prado, Butantã</td>
+                <td>08:55</td>
+              </tr>
+              <tr>
+                <td>Ponto 7 - Metrô Butantã</td>
+                <td>Av. Vital Brasil, 427, Butantã</td>
+                <td>09:00</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <br>
-        <button type="button" class="btn btn-secondary" onclick="enviarAvaliacao()">Enviar Avaliação</button>
       </section>
-    </div>
+
+      <!-- Mapa -->
+      <section class="mt-5">
+        <h2 class="mb-3">Localização do Ônibus em Tempo Real</h2>
+        <div id="map" class="rounded shadow-sm border"></div>
+      </section>
+
+      <!-- Avaliação -->
+      <section id="avaliacao" class="mt-5">
+        <h2 class="mb-3">Avalie seu ponto de ônibus</h2>
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Descreva problemas ou sugestões..." id="avaliacaoTexto" style="height: 100px;"></textarea>
+          <label for="avaliacaoTexto">Descreva problemas ou melhorias...</label>
+        </div>
+        <div class="mt-3">
+          <button type="button" class="btn btn-primary" onclick="enviarAvaliacao()">Enviar Avaliação</button>
+        </div>
+      </section>
+    </main>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="script.js"></script>
