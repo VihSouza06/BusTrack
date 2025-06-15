@@ -64,7 +64,7 @@ function localizacaoOnibus() {
 
   // Ícone do ônibus
   const busIcon = L.icon({
-    iconUrl: 'iconeLocalizacao.png',
+    iconUrl: 'images/iconeLocalizacao.png',
     iconSize: [32, 32],
     iconAnchor: [16, 32],
     popupAnchor: [0, -32]
