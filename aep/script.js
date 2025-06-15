@@ -103,4 +103,5 @@ function localizacaoOnibus() {
 
 function enviarAvaliacao() {
   alert("Obrigado pela sua contribuição! Sua avaliação foi enviada.");
+  document.getElementById('avaliacaoTexto').value = '';
 }
