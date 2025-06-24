@@ -58,9 +58,3 @@
 3. Abra o arquivo `index.html` no navegador.
 
 > 💡 Recomendado: use uma extensão como **Live Server** no VS Code para abrir com servidor local, principalmente se o projeto carregar arquivos JSON.
-
-Este projeto é de uso educacional e está licenciado sob a [MIT License](LICENSE).
-
----
-
-Se quiser, posso gerar esse `README.md` em Markdown formatado ou com badges e instruções de deploy no GitHub Pages. Deseja isso também?
