@@ -34,9 +34,7 @@
 ├── linha0034.html          → Página de detalhes de uma linha (exemplo)
 ├── script.js               → Scripts para carregar dados e simular localização
 ├── municipios.json         → Lista de municípios por estado (usado para preenchimento dinâmico)
-├── iconeLocalizacao.png    → Ícone do ônibus no mapa
-├── logo.png                → Logotipo exibida na navbar
-└── style.css (opcional)    → Arquivo de estilos personalizados
+
 ```
 
 ---
